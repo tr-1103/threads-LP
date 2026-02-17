@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>教員・公務員のための独立ロードマップ｜ダエグ先生</title>
+  <meta name="description" content="教員10年→AIで独立した元公務員が教える、辞める前にやるべきこと。公務員・教員の独立・起業を個別サポート。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: #1a1a1a;
+      background: #fff;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== Utility ===== */
+    .container { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+    .section { padding: 60px 0; }
+    .text-center { text-align: center; }
+    .highlight { color: #e63946; }
+    .underline-accent {
+      background: linear-gradient(transparent 60%, #fff3cd 60%);
+      padding: 0 2px;
+    }
+
+    /* ===== CTA Button ===== */
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, #e63946 0%, #c1121f 100%);
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 18px 40px;
+      border-radius: 50px;
+      box-shadow: 0 4px 20px rgba(230, 57, 70, 0.4);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      letter-spacing: 0.05em;
+    }
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 30px rgba(230, 57, 70, 0.5);
+    }
+    .cta-button::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255,255,255,0.15) 50%,
+        transparent 70%
+      );
+      animation: shine 3s infinite;
+    }
+    @keyframes shine {
+      0% { transform: translateX(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) rotate(45deg); }
+    }
+    .cta-sub {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 400;
+      margin-top: 4px;
+      opacity: 0.9;
+    }
+
+    /* ===== Header Bar ===== */
+    .header-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+      padding: 12px 20px;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      transform: translateY(-100%);
+      transition: transform 0.3s ease;
+    }
+    .header-bar.visible { transform: translateY(0); }
+    .header-bar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header-bar .logo { font-weight: 700; font-size: 0.9rem; }
+    .header-bar .cta-button {
+      font-size: 0.85rem;
+      padding: 10px 24px;
+    }
+
+    /* ===== Hero Section ===== */
+    .hero {
+      background: linear-gradient(160deg, #0d1b2a 0%, #1b2838 50%, #253545 100%);
+      color: #fff;
+      padding: 100px 0 70px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -30%;
+      width: 80%;
+      height: 200%;
+      background: radial-gradient(ellipse, rgba(230,57,70,0.08) 0%, transparent 70%);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(230,57,70,0.15);
+      color: #ff6b6b;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(230,57,70,0.3);
+    }
+    .hero h1 {
+      font-size: 1.7rem;
+      font-weight: 900;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    .hero h1 .large { font-size: 2rem; display: block; }
+    .hero-sub {
+      font-size: 1rem;
+      opacity: 0.8;
+      margin-bottom: 32px;
+      line-height: 1.9;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 20px;
+      margin-top: 36px;
+      flex-wrap: wrap;
+    }
+    .hero-stat {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      padding: 16px 20px;
+      flex: 1;
+      min-width: 140px;
+    }
+    .hero-stat .number {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #ff6b6b;
+    }
+    .hero-stat .label {
+      font-size: 0.75rem;
+      opacity: 0.7;
+      margin-top: 2px;
+    }
+
+    /* ===== Pain Section ===== */
+    .pain {
+      background: #f8f9fa;
+      padding: 60px 0;
+    }
+    .pain-heading {
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+    .pain-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .pain-list li {
+      background: #fff;
+      border-left: 4px solid #e63946;
+      padding: 18px 20px;
+      border-radius: 0 10px 10px 0;
+      font-size: 0.95rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      line-height: 1.7;
+    }
+    .pain-list li::before {
+      content: '😔';
+      margin-right: 8px;
+    }
+
+    /* ===== Empathy / Story Section ===== */
+    .story {
+      padding: 60px 0;
+      background: #fff;
+    }
+    .story-card {
+      background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+      border-radius: 16px;
+      padding: 32px 24px;
+      border: 1px solid #eee;
+    }
+    .story-profile {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .story-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #e63946, #c1121f);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .story-name {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .story-title {
+      font-size: 0.8rem;
+      color: #666;
+      margin-top: 2px;
+    }
+    .story-text {
+      font-size: 0.95rem;
+      line-height: 2;
+      color: #333;
+    }
+    .story-text p { margin-bottom: 16px; }
+    .story-text strong { color: #e63946; }
+
+    /* ===== Solution Section ===== */
+    .solution {
+      background: #0d1b2a;
+      color: #fff;
+      padding: 60px 0;
+    }
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #ff6b6b;
+      margin-bottom: 12px;
+    }
+    .section-heading {
+      font-size: 1.4rem;
+      font-weight: 900;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .section-desc {
+      font-size: 0.95rem;
+      opacity: 0.8;
+      margin-bottom: 36px;
+      line-height: 1.8;
+    }
+    .solution-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .solution-step {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 24px;
+      position: relative;
+    }
+    .step-number {
+      position: absolute;
+      top: -12px;
+      left: 20px;
+      background: linear-gradient(135deg, #e63946, #c1121f);
+      color: #fff;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 0.85rem;
+    }
+    .step-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      margin-top: 4px;
+    }
+    .step-desc {
+      font-size: 0.85rem;
+      opacity: 0.7;
+      line-height: 1.7;
+    }
+
+    /* ===== Benefits Section ===== */
+    .benefits {
+      padding: 60px 0;
+      background: #fff;
+    }
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .benefit-card {
+      background: #f8f9fa;
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .benefit-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #e63946 0%, #c1121f 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .benefit-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+    .benefit-desc {
+      font-size: 0.85rem;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* ===== Results Section ===== */
+    .results {
+      background: #f8f9fa;
+      padding: 60px 0;
+    }
+    .result-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .result-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+    .result-tag {
+      display: inline-block;
+      background: rgba(230,57,70,0.1);
+      color: #e63946;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+    .result-quote {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .result-meta {
+      font-size: 0.8rem;
+      color: #888;
+    }
+
+    /* ===== Consultation Details ===== */
+    .consultation {
+      background: #fff;
+      padding: 60px 0;
+    }
+    .consul-card {
+      background: linear-gradient(160deg, #0d1b2a 0%, #1b2838 100%);
+      color: #fff;
+      border-radius: 20px;
+      padding: 36px 24px;
+      text-align: center;
+    }
+    .consul-card .section-label { color: #ff6b6b; }
+    .consul-items {
+      text-align: left;
+      margin: 24px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .consul-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .consul-item .check {
+      color: #4ecdc4;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .consul-info {
+      background: rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 24px 0;
+      text-align: left;
+    }
+    .consul-info-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      font-size: 0.9rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .consul-info-row:last-child { border: none; }
+    .consul-info-row .label { opacity: 0.7; }
+    .consul-info-row .value { font-weight: 700; }
+    .consul-price {
+      margin: 24px 0 8px;
+    }
+    .consul-price .original {
+      font-size: 1rem;
+      text-decoration: line-through;
+      opacity: 0.5;
+    }
+    .consul-price .current {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #4ecdc4;
+    }
+    .consul-price .note {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      margin-top: 4px;
+    }
+    .consul-limited {
+      background: rgba(230,57,70,0.2);
+      color: #ff6b6b;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      display: inline-block;
+    }
+
+    /* ===== FAQ Section ===== */
+    .faq {
+      background: #f8f9fa;
+      padding: 60px 0;
+    }
+    .faq-list {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .faq-item {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+    .faq-question {
+      padding: 18px 20px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      user-select: none;
+    }
+    .faq-question::before {
+      content: 'Q.';
+      color: #e63946;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .faq-toggle {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+    .faq-item.open .faq-toggle { transform: rotate(180deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-answer-inner {
+      padding: 0 20px 18px;
+      font-size: 0.85rem;
+      color: #555;
+      line-height: 1.8;
+      border-top: 1px solid #f0f0f0;
+      padding-top: 14px;
+    }
+
+    /* ===== Final CTA ===== */
+    .final-cta {
+      background: linear-gradient(160deg, #0d1b2a 0%, #1b2838 100%);
+      color: #fff;
+      padding: 70px 0;
+      text-align: center;
+    }
+    .final-cta h2 {
+      font-size: 1.5rem;
+      font-weight: 900;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .final-cta p {
+      font-size: 0.95rem;
+      opacity: 0.8;
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
+    .final-cta .cta-button {
+      font-size: 1.15rem;
+      padding: 20px 48px;
+    }
+    .guarantee {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
+      font-size: 0.8rem;
+      opacity: 0.7;
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      background: #0a1520;
+      color: rgba(255,255,255,0.5);
+      padding: 24px 0;
+      text-align: center;
+      font-size: 0.75rem;
+    }
+
+    /* ===== Scroll Animation ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== Responsive ===== */
+    @media (min-width: 480px) {
+      .hero h1 { font-size: 2rem; }
+      .hero h1 .large { font-size: 2.4rem; }
+      .section-heading { font-size: 1.6rem; }
+      .benefit-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (min-width: 640px) {
+      .hero h1 { font-size: 2.2rem; }
+      .hero h1 .large { font-size: 2.8rem; }
+      .hero-stats { gap: 16px; }
+      .section { padding: 80px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <div class="header-bar" id="headerBar">
+    <div class="container">
+      <span class="logo">ダエグ先生</span>
+      <a href="#cta-final" class="cta-button" style="box-shadow:none;">
+        無料で相談する
+      </a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-badge">Threadsフォロワー1,800名突破</span>
+      <h1>
+        教員・公務員として働く<br>あなたへ。<br>
+        <span class="large">"安定"の先に、<br><span style="color:#ff6b6b;">自由な選択肢</span>を。</span>
+      </h1>
+      <p class="hero-sub">
+        教員10年 → AIスキルで独立した元公務員が<br>
+        「辞める前に本当にやるべきこと」を<br>
+        あなたの状況に合わせて個別にお伝えします。
+      </p>
+      <div class="text-center">
+        <a href="#cta-final" class="cta-button">
+          無料個別面談に申し込む
+          <span class="cta-sub">毎月先着5名限定・オンライン30分</span>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="number">10年</div>
+          <div class="label">教員経験</div>
+        </div>
+        <div class="hero-stat">
+          <div class="number">1年目</div>
+          <div class="label">独立からの期間</div>
+        </div>
+        <div class="hero-stat">
+          <div class="number">AI活用</div>
+          <div class="label">独立の武器</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pain Points -->
+  <section class="pain">
+    <div class="container">
+      <p class="pain-heading fade-in">
+        こんな悩み、<br>ひとりで抱えていませんか？
+      </p>
+      <ul class="pain-list fade-in">
+        <li>「安定しているから」という理由だけで、今の仕事を続けている</li>
+        <li>授業準備や業務に追われて、自分の時間がほとんどない</li>
+        <li>独立・起業に興味はあるけど、何から始めればいいかわからない</li>
+        <li>辞めたいけど、家族のこと・収入のことを考えると踏み出せない</li>
+        <li>副業禁止の壁があって、在職中にできることが限られると思っている</li>
+        <li>AIが気になるけど、自分に使いこなせるか不安</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Empathy / Story -->
+  <section class="story">
+    <div class="container">
+      <div class="story-card fade-in">
+        <div class="story-profile">
+          <div class="story-avatar">D</div>
+          <div>
+            <div class="story-name">ダエグ先生</div>
+            <div class="story-title">教員10年 → AI独立した元公務員</div>
+          </div>
+        </div>
+        <div class="story-text">
+          <p>
+            実は、僕もかつてはまったく同じ悩みを抱えていました。
+          </p>
+          <p>
+            教員として10年間、毎日2時間かけて授業準備をし、生徒のために全力で働く日々。安定した収入はあったけれど、ふと気づいたんです。
+          </p>
+          <p>
+            <strong>「この先30年、同じことを続けるのか？」</strong>
+          </p>
+          <p>
+            安定と引き換えに、<strong>"未来の選択肢"を失いかけていた</strong>ことに。
+          </p>
+          <p>
+            でも、AIスキルとの出会いが全てを変えました。授業準備は2時間から<strong>15分</strong>に。空いた時間でスキルを磨き、独立の準備を進め、ついに公務員を卒業。
+          </p>
+          <p>
+            今は自分の経験を活かして、同じ悩みを持つ教員・公務員の方の独立・起業をサポートしています。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution -->
+  <section class="solution">
+    <div class="container fade-in">
+      <span class="section-label">Solution</span>
+      <h2 class="section-heading">
+        個別面談で、あなただけの<br>
+        <span style="color:#4ecdc4;">「独立ロードマップ」</span>を<br>一緒に作ります
+      </h2>
+      <p class="section-desc">
+        一般的なセミナーや情報商材とは違います。<br>
+        あなたの現状・家族構成・スキル・目標に合わせた<br>完全オーダーメイドのプランをご提案します。
+      </p>
+      <div class="solution-steps">
+        <div class="solution-step">
+          <div class="step-number">1</div>
+          <div class="step-title">現状ヒアリング</div>
+          <div class="step-desc">今の職場環境、収入、家族構成、使える時間を丁寧にお聞きします。「こんなこと聞いても大丈夫？」ということも遠慮なくどうぞ。</div>
+        </div>
+        <div class="solution-step">
+          <div class="step-number">2</div>
+          <div class="step-title">強み・スキルの棚卸し</div>
+          <div class="step-desc">教員・公務員として培ったスキルは、実はビジネスで大きな武器になります。あなた自身が気づいていない「売れる強み」を一緒に見つけます。</div>
+        </div>
+        <div class="solution-step">
+          <div class="step-number">3</div>
+          <div class="step-title">AI活用×独立プラン設計</div>
+          <div class="step-desc">AIを使って効率化できるポイントと、あなたに合った独立の道筋を具体的にお伝えします。在職中から始められるステップもご提案。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="benefits">
+    <div class="container">
+      <div class="text-center fade-in">
+        <span class="section-label" style="color:#e63946;">Benefits</span>
+        <h2 class="section-heading">面談を受けると<br>こんな変化が得られます</h2>
+      </div>
+      <div class="benefit-grid fade-in">
+        <div class="benefit-card">
+          <div class="benefit-icon">🗺️</div>
+          <div>
+            <div class="benefit-title">独立までの道筋が明確に</div>
+            <div class="benefit-desc">「何から始めればいいか」のモヤモヤが解消されます</div>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🤖</div>
+          <div>
+            <div class="benefit-title">AIの具体的な活用法がわかる</div>
+            <div class="benefit-desc">あなたの業務に直結するAI活用術をお伝えします</div>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">💰</div>
+          <div>
+            <div class="benefit-title">在職中にできることがわかる</div>
+            <div class="benefit-desc">副業禁止でも合法的にできる準備を具体的に</div>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🛡️</div>
+          <div>
+            <div class="benefit-title">リスクを最小限にできる</div>
+            <div class="benefit-desc">家族を守りながら独立する方法がわかります</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results / Testimonials -->
+  <section class="results">
+    <div class="container">
+      <div class="text-center fade-in">
+        <span class="section-label" style="color:#e63946;">Voice</span>
+        <h2 class="section-heading">相談者の声</h2>
+      </div>
+      <div class="result-cards fade-in">
+        <div class="result-card">
+          <div class="result-tag">30代・小学校教員</div>
+          <div class="result-quote">
+            「漠然と"辞めたい"と思っていたのが、面談後には具体的な3ステップが見えました。在職中でもできることがこんなにあるとは思わなかったです。」
+          </div>
+          <div class="result-meta">オンライン面談を受講</div>
+        </div>
+        <div class="result-card">
+          <div class="result-tag">40代・市役所職員</div>
+          <div class="result-quote">
+            「AI活用で業務時間を大幅に短縮できるようになりました。空いた時間でスキルアップを始めて、今は独立に向けて着実に準備を進めています。」
+          </div>
+          <div class="result-meta">面談後3ヶ月の変化</div>
+        </div>
+        <div class="result-card">
+          <div class="result-tag">30代・中学校教員</div>
+          <div class="result-quote">
+            「同じ教員出身のダエグ先生だからこそ、私の悩みを本当に理解してくれました。"辞める前にやるべきこと"が明確になって、焦りがなくなりました。」
+          </div>
+          <div class="result-meta">オンライン面談を受講</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consultation Details -->
+  <section class="consultation">
+    <div class="container fade-in">
+      <div class="consul-card">
+        <span class="section-label">Consultation</span>
+        <h2 class="section-heading" style="color:#fff;">無料個別面談の詳細</h2>
+        <div class="consul-items">
+          <div class="consul-item">
+            <span class="check">✓</span>
+            <span>あなたの現状に合わせた独立ロードマップの作成</span>
+          </div>
+          <div class="consul-item">
+            <span class="check">✓</span>
+            <span>教員・公務員スキルを活かしたビジネスアイデアのご提案</span>
+          </div>
+          <div class="consul-item">
+            <span class="check">✓</span>
+            <span>今日から始められるAI活用法のアドバイス</span>
+          </div>
+          <div class="consul-item">
+            <span class="check">✓</span>
+            <span>在職中にやるべき準備リストのお渡し</span>
+          </div>
+          <div class="consul-item">
+            <span class="check">✓</span>
+            <span>独立に関するどんな質問にもお答えします</span>
+          </div>
+        </div>
+        <div class="consul-info">
+          <div class="consul-info-row">
+            <span class="label">形式</span>
+            <span class="value">オンライン（Zoom）</span>
+          </div>
+          <div class="consul-info-row">
+            <span class="label">時間</span>
+            <span class="value">約30分</span>
+          </div>
+          <div class="consul-info-row">
+            <span class="label">対象</span>
+            <span class="value">教員・公務員の方</span>
+          </div>
+        </div>
+        <div class="consul-price">
+          <div class="original">通常 ¥5,000</div>
+          <div class="current">今だけ無料</div>
+          <div class="note">※Threadsからのお申し込み限定</div>
+        </div>
+        <div class="consul-limited">⚡ 毎月先着5名様限定</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <div class="text-center fade-in">
+        <span class="section-label" style="color:#e63946;">FAQ</span>
+        <h2 class="section-heading">よくある質問</h2>
+      </div>
+      <div class="faq-list fade-in">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>まだ辞めるか決めていなくても大丈夫ですか？</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">もちろん大丈夫です。むしろ「辞めるかどうか迷っている段階」で相談される方がほとんどです。情報を集めた上で、辞めない選択をするのも全く問題ありません。</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>何かを売りつけられたりしませんか？</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">無理な勧誘は一切しません。面談はあなたの状況を整理し、次のアクションを明確にすることが目的です。もし継続サポートに興味があればご案内しますが、その場で決める必要はありません。</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>AIの知識がゼロでも参加できますか？</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">はい、もちろんです。僕自身も最初は完全な初心者でした。面談では、あなたのレベルに合わせてわかりやすくお伝えします。「AIって何？」という状態でも全く問題ありません。</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>土日や夜間でも面談できますか？</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">はい、平日夜間や土日も対応しています。お申し込み後にご都合の良い日時を調整させていただきます。現職で忙しい方でも安心してご参加いただけます。</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>面談の内容は秘密にしてもらえますか？</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">もちろんです。面談内容は完全に秘密厳守です。職場に知られたくない方も安心してご相談ください。同じ立場を経験した者として、その気持ちは十分に理解しています。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta" id="cta-final">
+    <div class="container fade-in">
+      <h2>
+        "安定"を手放す必要はない。<br>
+        <span style="color:#4ecdc4;">選択肢を増やす</span>だけ。
+      </h2>
+      <p>
+        まずは30分、あなたの未来について<br>
+        一緒に考えてみませんか？
+      </p>
+      <a href="#" class="cta-button" id="ctaButton">
+        無料個別面談に申し込む
+        <span class="cta-sub">毎月先着5名限定・30秒で予約完了</span>
+      </a>
+      <div class="guarantee">
+        <span>🔒</span>
+        <span>無理な勧誘は一切ありません</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 ダエグ先生 All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Sticky Header
+    const header = document.getElementById('headerBar');
+    const heroSection = document.querySelector('.hero');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > heroSection.offsetHeight - 60) {
+        header.classList.add('visible');
+      } else {
+        header.classList.remove('visible');
+      }
+    });
+
+    // Scroll Animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const answer = item.querySelector('.faq-answer');
+        const isOpen = item.classList.contains('open');
+
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-answer').style.maxHeight = null;
+        });
+
+        // Open clicked
+        if (!isOpen) {
+          item.classList.add('open');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
+
+    // Smooth scroll for CTA buttons
+    document.querySelectorAll('a[href="#cta-final"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementById('cta-final').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+
+</body>
+</html>
