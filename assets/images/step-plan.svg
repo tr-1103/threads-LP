@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <circle cx="60" cy="60" r="50" fill="#4ecdc4" opacity="0.08"/>
+  <circle cx="60" cy="60" r="35" fill="#4ecdc4" opacity="0.06"/>
+  <!-- Roadmap / Plan document -->
+  <g transform="translate(60, 58)">
+    <!-- Document -->
+    <rect x="-22" y="-30" width="44" height="56" rx="4" fill="#253545" stroke="#4ecdc4" stroke-width="1.5"/>
+    <!-- Header -->
+    <rect x="-16" y="-24" width="32" height="8" rx="2" fill="#4ecdc4" opacity="0.2"/>
+    <!-- Checklist -->
+    <rect x="-16" y="-10" width="8" height="8" rx="2" fill="none" stroke="#4ecdc4" stroke-width="1.2"/>
+    <path d="M-14 -6 l2 2 4-4" stroke="#4ecdc4" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <line x1="-4" y1="-6" x2="16" y2="-6" stroke="#4ecdc4" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+
+    <rect x="-16" y="4" width="8" height="8" rx="2" fill="none" stroke="#4ecdc4" stroke-width="1.2"/>
+    <path d="M-14 8 l2 2 4-4" stroke="#4ecdc4" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <line x1="-4" y1="8" x2="14" y2="8" stroke="#4ecdc4" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+
+    <rect x="-16" y="18" width="8" height="8" rx="2" fill="none" stroke="#667788" stroke-width="1.2"/>
+    <line x1="-4" y1="22" x2="12" y2="22" stroke="#667788" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+  </g>
+</svg>

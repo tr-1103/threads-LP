@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="pg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e63946" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#e63946" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="400" height="300" fill="url(#pg1)"/>
+
+  <!-- Trapped in box concept -->
+  <g transform="translate(200, 140)">
+    <!-- Box / cage -->
+    <rect x="-60" y="-50" width="120" height="100" rx="6" fill="none" stroke="#c0c8d0" stroke-width="2" stroke-dasharray="6 3"/>
+    <text x="0" y="-60" text-anchor="middle" font-size="10" fill="#c0c8d0" font-family="sans-serif">安定</text>
+
+    <!-- Person inside -->
+    <circle cx="0" cy="-15" r="14" fill="#f0f4f8" stroke="#999" stroke-width="1.5"/>
+    <path d="M-12 8 Q-12 -2, 0 -2 Q12 -2, 12 8 L12 30 L-12 30z" fill="#f0f4f8" stroke="#999" stroke-width="1.5"/>
+
+    <!-- Chains / constraints -->
+    <path d="M-60 20 Q-40 20, -20 15" stroke="#ddd" stroke-width="2" stroke-linecap="round"/>
+    <path d="M60 20 Q40 20, 20 15" stroke="#ddd" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Thought bubble -->
+    <g transform="translate(70, -60)">
+      <rect x="0" y="0" width="80" height="40" rx="20" fill="#fff" stroke="#e63946" stroke-width="1" opacity="0.8"/>
+      <circle cx="5" cy="42" r="4" fill="#fff" stroke="#e63946" stroke-width="1" opacity="0.6"/>
+      <circle cx="0" cy="50" r="2.5" fill="#fff" stroke="#e63946" stroke-width="1" opacity="0.4"/>
+      <text x="40" y="16" text-anchor="middle" font-size="8" fill="#e63946" font-family="sans-serif">このまま</text>
+      <text x="40" y="28" text-anchor="middle" font-size="8" fill="#e63946" font-family="sans-serif">30年...?</text>
+    </g>
+
+    <!-- Clock pressure -->
+    <g transform="translate(-80, -55)">
+      <circle r="16" fill="#fff" stroke="#ddd" stroke-width="1.5"/>
+      <line x1="0" y1="0" x2="0" y2="-9" stroke="#e63946" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="0" y1="0" x2="6" y2="3" stroke="#e63946" stroke-width="1.5" stroke-linecap="round"/>
+      <circle r="1.5" fill="#e63946"/>
+    </g>
+
+    <!-- Stack of papers -->
+    <g transform="translate(-80, 10)">
+      <rect x="-12" y="0" width="24" height="30" rx="2" fill="#f0f4f8" stroke="#ddd" stroke-width="1"/>
+      <rect x="-10" y="-3" width="24" height="30" rx="2" fill="#f5f7fa" stroke="#ddd" stroke-width="1"/>
+      <rect x="-8" y="-6" width="24" height="30" rx="2" fill="#fff" stroke="#ddd" stroke-width="1"/>
+      <line x1="-2" y1="2" x2="10" y2="2" stroke="#ddd" stroke-width="1"/>
+      <line x1="-2" y1="7" x2="8" y2="7" stroke="#ddd" stroke-width="1"/>
+      <line x1="-2" y1="12" x2="10" y2="12" stroke="#ddd" stroke-width="1"/>
+    </g>
+  </g>
+
+  <!-- Label -->
+  <text x="200" y="270" text-anchor="middle" font-size="11" fill="#999" font-family="sans-serif">"未来の選択肢"を失っていませんか？</text>
+</svg>

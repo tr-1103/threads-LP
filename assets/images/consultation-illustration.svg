@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" fill="none">
+  <defs>
+    <linearGradient id="cg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4ecdc4" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#4ecdc4" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background shape -->
+  <circle cx="250" cy="175" r="150" fill="url(#cg1)"/>
+
+  <!-- Video call frame -->
+  <rect x="100" y="60" width="300" height="200" rx="12" fill="#1a2332" stroke="#2d4050" stroke-width="2"/>
+  <rect x="112" y="72" width="276" height="168" rx="6" fill="#0d1b2a"/>
+
+  <!-- Person 1 (left - consultant) -->
+  <g transform="translate(190, 130)">
+    <rect x="-55" y="-30" width="110" height="100" rx="6" fill="#162030" stroke="#2d4050" stroke-width="1"/>
+    <circle cy="-5" r="16" fill="#253545" stroke="#4ecdc4" stroke-width="1.5"/>
+    <path d="M-14 18 Q-14 8, 0 5 Q14 8, 14 18 L14 40 L-14 40z" fill="#253545" stroke="#4ecdc4" stroke-width="1"/>
+    <text x="0" y="60" text-anchor="middle" font-size="8" fill="#4ecdc4" font-family="sans-serif">ダエグ先生</text>
+  </g>
+
+  <!-- Person 2 (right - client) -->
+  <g transform="translate(310, 130)">
+    <rect x="-55" y="-30" width="110" height="100" rx="6" fill="#162030" stroke="#2d4050" stroke-width="1"/>
+    <circle cy="-5" r="16" fill="#253545" stroke="#667788" stroke-width="1.5"/>
+    <path d="M-14 18 Q-14 8, 0 5 Q14 8, 14 18 L14 40 L-14 40z" fill="#253545" stroke="#667788" stroke-width="1"/>
+    <text x="0" y="60" text-anchor="middle" font-size="8" fill="#8899aa" font-family="sans-serif">あなた</text>
+  </g>
+
+  <!-- Video call controls -->
+  <g transform="translate(250, 248)">
+    <circle r="10" fill="#e63946" opacity="0.9"/>
+    <rect x="-4" y="-4" width="8" height="8" rx="1" fill="#fff"/>
+    <circle cx="-30" cy="0" r="10" fill="#2d4050"/>
+    <circle cx="30" cy="0" r="10" fill="#2d4050"/>
+    <!-- Mic icon -->
+    <rect x="-32" y="-4" width="4" height="6" rx="2" fill="#4ecdc4"/>
+    <path d="M-34 3 Q-30 7, -26 3" stroke="#4ecdc4" stroke-width="1" fill="none"/>
+    <!-- Camera icon -->
+    <rect x="25" y="-3" width="7" height="6" rx="1" fill="#4ecdc4"/>
+    <path d="M32 -2 l4 -2 v8 l-4 -2z" fill="#4ecdc4"/>
+  </g>
+
+  <!-- Chat bubbles floating -->
+  <g transform="translate(420, 100)">
+    <rect x="0" y="0" width="60" height="24" rx="12" fill="#4ecdc4" opacity="0.2"/>
+    <text x="30" y="16" text-anchor="middle" font-size="8" fill="#4ecdc4" font-family="sans-serif">30min</text>
+  </g>
+
+  <g transform="translate(30, 140)">
+    <rect x="0" y="0" width="55" height="24" rx="12" fill="#e63946" opacity="0.15"/>
+    <text x="27" y="16" text-anchor="middle" font-size="8" fill="#e63946" font-family="sans-serif">無料</text>
+  </g>
+
+  <g transform="translate(50, 90)">
+    <rect x="0" y="0" width="55" height="24" rx="12" fill="#4ecdc4" opacity="0.15"/>
+    <text x="27" y="16" text-anchor="middle" font-size="8" fill="#4ecdc4" font-family="sans-serif">Zoom</text>
+  </g>
+
+  <!-- Floating document -->
+  <g transform="translate(430, 200)">
+    <rect x="0" y="0" width="36" height="44" rx="4" fill="#1a2332" stroke="#4ecdc4" stroke-width="1" opacity="0.7"/>
+    <line x1="8" y1="12" x2="28" y2="12" stroke="#4ecdc4" stroke-width="1" opacity="0.5"/>
+    <line x1="8" y1="18" x2="24" y2="18" stroke="#4ecdc4" stroke-width="1" opacity="0.5"/>
+    <line x1="8" y1="24" x2="20" y2="24" stroke="#4ecdc4" stroke-width="1" opacity="0.5"/>
+    <path d="M12 32 l3 3 6-7" stroke="#4ecdc4" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.7"/>
+  </g>
+
+  <!-- Bottom text -->
+  <text x="250" y="310" text-anchor="middle" font-size="13" fill="#555" font-family="sans-serif" font-weight="bold">オンライン個別面談</text>
+  <text x="250" y="330" text-anchor="middle" font-size="10" fill="#999" font-family="sans-serif">あなたの状況に合わせた完全オーダーメイド</text>
+</svg>

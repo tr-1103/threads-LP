@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <circle cx="60" cy="60" r="50" fill="#4ecdc4" opacity="0.08"/>
+  <circle cx="60" cy="60" r="35" fill="#4ecdc4" opacity="0.06"/>
+  <!-- Chat bubbles -->
+  <rect x="30" y="35" width="40" height="22" rx="11" fill="#253545" stroke="#4ecdc4" stroke-width="1.5"/>
+  <circle cx="43" cy="46" r="2" fill="#4ecdc4" opacity="0.6"/>
+  <circle cx="50" cy="46" r="2" fill="#4ecdc4" opacity="0.6"/>
+  <circle cx="57" cy="46" r="2" fill="#4ecdc4" opacity="0.6"/>
+  <path d="M38 57 l-2 6 8-4" fill="#253545" stroke="#4ecdc4" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <rect x="50" y="62" width="40" height="22" rx="11" fill="#1a2332" stroke="#667788" stroke-width="1.5"/>
+  <line x1="60" y1="73" x2="80" y2="73" stroke="#667788" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M82 84 l2 6 -8-4" fill="#1a2332" stroke="#667788" stroke-width="1.5" stroke-linejoin="round"/>
+</svg>
