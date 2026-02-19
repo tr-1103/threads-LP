@@ -375,6 +375,9 @@
       gap: 12px;
       color: #333;
     }
+    .pain-list li {
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
     .pain-list li:hover {
       transform: translateX(4px);
       box-shadow: 0 2px 12px rgba(192,57,43,0.1);
@@ -693,6 +696,9 @@
       margin-bottom: 10px;
     }
     .result-stars .star { color: #f39c12; font-size: 0.85rem; }
+    .result-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
     .result-card:hover {
       transform: translateY(-2px);
       box-shadow: 0 4px 20px rgba(0,0,0,0.08);
@@ -898,7 +904,7 @@
     .final-cta {
       background: linear-gradient(165deg, #0b1622 0%, #152238 50%, #1a3050 100%);
       color: #fff;
-      padding: 80px 0;
+      padding: 88px 0 96px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -911,33 +917,35 @@
       right: 0;
       bottom: 0;
       background:
-        radial-gradient(ellipse at 30% 50%, rgba(78,205,196,0.05) 0%, transparent 50%),
-        radial-gradient(ellipse at 70% 50%, rgba(192,57,43,0.05) 0%, transparent 50%);
+        radial-gradient(ellipse at 30% 50%, rgba(78,205,196,0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 50%, rgba(192,57,43,0.06) 0%, transparent 50%);
     }
     .final-cta .container { position: relative; z-index: 1; }
     .final-cta h2 {
       font-size: 1.5rem;
       font-weight: 900;
       line-height: 1.7;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
     .final-cta h2 .accent-color { color: #4ecdc4; }
     .final-cta .desc {
       font-size: 0.92rem;
       color: rgba(255,255,255,0.65);
-      margin-bottom: 36px;
+      margin-bottom: 40px;
       line-height: 1.9;
       font-weight: 300;
     }
     .final-cta-reasons {
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      margin-bottom: 32px;
+      gap: 10px;
+      margin-bottom: 44px;
       text-align: left;
       max-width: 400px;
       margin-left: auto;
       margin-right: auto;
+      padding-bottom: 44px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
     .final-cta-reason {
       display: flex;
@@ -956,7 +964,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      margin-top: 24px;
+      margin-top: 32px;
       font-size: 0.78rem;
       color: rgba(255,255,255,0.5);
     }
@@ -967,12 +975,22 @@
     }
 
     /* ===== Booking Flow ===== */
+    .booking-flow-wrapper {
+      margin-bottom: 40px;
+    }
+    .booking-flow-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
     .booking-flow {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 12px;
-      margin-bottom: 32px;
     }
     .booking-step {
       display: flex;
@@ -981,7 +999,12 @@
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.12);
       border-radius: 8px;
-      padding: 10px 16px;
+      padding: 12px 18px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .booking-step:first-child {
+      background: rgba(78,205,196,0.08);
+      border-color: rgba(78,205,196,0.2);
     }
     .booking-step-number {
       width: 24px;
@@ -1003,22 +1026,24 @@
       white-space: nowrap;
     }
     .booking-flow-arrow {
-      color: rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.25);
       font-size: 1rem;
       flex-shrink: 0;
     }
     .survey-link {
       display: inline-block;
-      margin-top: 16px;
+      margin-top: 20px;
       font-size: 0.82rem;
       color: #4ecdc4;
-      border-bottom: 1px solid rgba(78,205,196,0.3);
-      padding-bottom: 2px;
-      transition: border-color 0.2s, opacity 0.2s;
+      padding: 10px 20px;
+      border: 1px solid rgba(78,205,196,0.25);
+      border-radius: 8px;
+      background: rgba(78,205,196,0.06);
+      transition: background 0.2s, border-color 0.2s;
     }
     .survey-link:hover {
-      border-color: #4ecdc4;
-      opacity: 0.85;
+      background: rgba(78,205,196,0.12);
+      border-color: rgba(78,205,196,0.4);
     }
     @media (max-width: 479px) {
       .booking-flow { gap: 6px; }
@@ -1100,7 +1125,7 @@
       .pain, .story, .solution, .benefits, .results, .consultation, .faq {
         padding: 88px 0;
       }
-      .final-cta { padding: 100px 0; }
+      .final-cta { padding: 108px 0 112px; }
       .solution-step { padding: 32px 28px; }
       .story-card { padding: 44px 36px; }
     }
@@ -1500,6 +1525,12 @@
             <div class="note">※ Threadsからのお申し込み限定</div>
           </div>
           <div class="consul-limited">毎月先着5名様限定 ・ 今月残り2枠</div>
+          <div style="text-align:center;margin-top:28px;">
+            <a href="https://timerex.net/i/abe0tatsu_4697/ff861b08/" target="_blank" rel="noopener" class="cta-button" style="font-size:0.95rem;padding:18px 36px;">
+              無料面談の日程を選ぶ<span class="cta-arrow">&rarr;</span>
+              <span class="cta-sub">30秒で予約完了</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -1597,6 +1628,8 @@
         </div>
       </div>
       <!-- 申し込みフロー -->
+      <div class="booking-flow-wrapper">
+      <div class="booking-flow-label">お申し込みの流れ</div>
       <div class="booking-flow">
         <div class="booking-step">
           <div class="booking-step-number">1</div>
@@ -1612,6 +1645,7 @@
           <div class="booking-step-number">3</div>
           <div class="booking-step-text">当日面談</div>
         </div>
+      </div>
       </div>
 
       <a href="https://timerex.net/i/abe0tatsu_4697/ff861b08/" target="_blank" rel="noopener" class="cta-button" id="ctaButton">
