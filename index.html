@@ -966,6 +966,67 @@
       display: inline-block;
     }
 
+    /* ===== Booking Flow ===== */
+    .booking-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .booking-step {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 10px 16px;
+    }
+    .booking-step-number {
+      width: 24px;
+      height: 24px;
+      background: #4ecdc4;
+      color: #0b1622;
+      font-size: 0.75rem;
+      font-weight: 900;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .booking-step-text {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      white-space: nowrap;
+    }
+    .booking-flow-arrow {
+      color: rgba(255,255,255,0.3);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .survey-link {
+      display: inline-block;
+      margin-top: 16px;
+      font-size: 0.82rem;
+      color: #4ecdc4;
+      border-bottom: 1px solid rgba(78,205,196,0.3);
+      padding-bottom: 2px;
+      transition: border-color 0.2s, opacity 0.2s;
+    }
+    .survey-link:hover {
+      border-color: #4ecdc4;
+      opacity: 0.85;
+    }
+    @media (max-width: 479px) {
+      .booking-flow { gap: 6px; }
+      .booking-step { padding: 8px 10px; }
+      .booking-step-text { font-size: 0.7rem; }
+      .booking-flow-arrow { font-size: 0.8rem; }
+    }
+
     /* ===== Footer ===== */
     .footer {
       background: #080e16;
@@ -1053,7 +1114,7 @@
       <span class="header-logo">ダエグ先生</span>
       <div style="display:flex;align-items:center;gap:14px;">
         <span class="header-remaining"><span class="dot"></span>残り枠わずか</span>
-        <a href="#cta-final" class="header-cta">無料で相談する</a>
+        <a href="https://timerex.net/i/abe0tatsu_4697/ff861b08/" target="_blank" rel="noopener" class="header-cta">無料で相談する</a>
       </div>
     </div>
   </div>
@@ -1074,7 +1135,7 @@
         あなたの状況に合わせて個別にお伝えします。
       </p>
       <div class="text-center">
-        <a href="#cta-final" class="cta-button">
+        <a href="https://timerex.net/i/abe0tatsu_4697/ff861b08/" target="_blank" rel="noopener" class="cta-button">
           無料個別面談に申し込む<span class="cta-arrow">&rarr;</span>
           <span class="cta-sub">毎月先着5名限定 ・ オンライン30分</span>
         </a>
@@ -1166,7 +1227,7 @@
   <div class="transition-cta">
     <div class="container fade-in">
       <p>その悩みを<span class="red">30分で整理</span>できます。</p>
-      <a href="#cta-final" class="cta-button">
+      <a href="https://timerex.net/i/abe0tatsu_4697/ff861b08/" target="_blank" rel="noopener" class="cta-button">
         まずは無料で相談する<span class="cta-arrow">&rarr;</span>
         <span class="cta-sub">売り込み一切なし</span>
       </a>
@@ -1535,9 +1596,30 @@
           <span>面談後すぐ使える独立ロードマップ付き</span>
         </div>
       </div>
-      <a href="#" class="cta-button" id="ctaButton">
-        無料個別面談に申し込む<span class="cta-arrow">&rarr;</span>
+      <!-- 申し込みフロー -->
+      <div class="booking-flow">
+        <div class="booking-step">
+          <div class="booking-step-number">1</div>
+          <div class="booking-step-text">日程を選ぶ</div>
+        </div>
+        <div class="booking-flow-arrow">&rarr;</div>
+        <div class="booking-step">
+          <div class="booking-step-number">2</div>
+          <div class="booking-step-text">事前アンケート</div>
+        </div>
+        <div class="booking-flow-arrow">&rarr;</div>
+        <div class="booking-step">
+          <div class="booking-step-number">3</div>
+          <div class="booking-step-text">当日面談</div>
+        </div>
+      </div>
+
+      <a href="https://timerex.net/i/abe0tatsu_4697/ff861b08/" target="_blank" rel="noopener" class="cta-button" id="ctaButton">
+        まずは日程を選ぶ<span class="cta-arrow">&rarr;</span>
         <span class="cta-sub">毎月先着5名限定 ・ 30秒で予約完了</span>
+      </a>
+      <a href="https://forms.gle/FStkxFKVne8sdXU27" target="_blank" rel="noopener" class="survey-link">
+        日程予約済みの方はこちら：事前アンケートに回答する &rarr;
       </a>
       <div class="guarantee">
         <img src="assets/icons/lock.svg" alt="">
@@ -1556,7 +1638,7 @@
   <!-- Floating CTA (Mobile) -->
   <div class="floating-cta" id="floatingCta">
     <div class="floating-cta-inner">
-      <a href="#cta-final" class="cta-button">
+      <a href="https://timerex.net/i/abe0tatsu_4697/ff861b08/" target="_blank" rel="noopener" class="cta-button">
         無料で相談する<span class="cta-arrow">&rarr;</span>
         <span class="cta-sub">残り2枠 ・ 30秒で完了</span>
       </a>
@@ -1631,11 +1713,15 @@
       });
     });
 
-    // Smooth scroll for CTA links
-    document.querySelectorAll('a[href="#cta-final"]').forEach(link => {
+    // Smooth scroll for internal anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
       link.addEventListener('click', (e) => {
-        e.preventDefault();
-        document.getElementById('cta-final').scrollIntoView({ behavior: 'smooth' });
+        const targetId = link.getAttribute('href').slice(1);
+        const target = document.getElementById(targetId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
       });
     });
 
