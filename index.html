@@ -203,48 +203,84 @@
       display: inline-flex;
       flex-direction: column;
       align-items: center;
-      background: var(--color-red);
+      background: linear-gradient(135deg, #e74c3c 0%, #c0392b 50%, #e74c3c 100%);
+      background-size: 200% 200%;
+      animation: ctaPulseGradient 3s ease infinite;
       color: #fff;
-      font-size: 1.05rem;
-      font-weight: 700;
-      padding: 22px 52px;
-      border-radius: 14px;
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+      font-weight: 900;
+      padding: clamp(24px, 4vw, 32px) clamp(40px, 8vw, 72px);
+      border-radius: 16px;
       box-shadow:
-        0 8px 32px rgba(231,76,60,0.35),
-        0 0 0 0 rgba(231,76,60,0);
+        0 8px 32px rgba(231,76,60,0.4),
+        0 0 0 0 rgba(231,76,60,0),
+        inset 0 1px 0 rgba(255,255,255,0.15);
       transition: all 0.4s var(--ease-out-expo);
       position: relative;
       overflow: hidden;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.06em;
       cursor: pointer;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    }
+    @keyframes ctaPulseGradient {
+      0%,100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
     }
     .cta-button::before {
       content: '';
       position: absolute;
       top: 0; left: -100%;
       width: 100%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-      transition: left 0.6s ease;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      animation: ctaShine 4s ease-in-out infinite;
+    }
+    @keyframes ctaShine {
+      0%,100% { left: -100%; }
+      50% { left: 100%; }
     }
     .cta-button:hover::before { left: 100%; }
     .cta-button:hover {
-      transform: translateY(-4px) scale(1.02);
+      transform: translateY(-5px) scale(1.03);
       box-shadow:
-        0 14px 44px rgba(231,76,60,0.45),
-        0 0 0 4px rgba(231,76,60,0.15);
+        0 16px 48px rgba(231,76,60,0.5),
+        0 0 0 5px rgba(231,76,60,0.15),
+        inset 0 1px 0 rgba(255,255,255,0.15);
+    }
+    /* Pulsing ring animation around CTA */
+    .cta-button::after {
+      content: '';
+      position: absolute;
+      top: -4px; left: -4px; right: -4px; bottom: -4px;
+      border-radius: 20px;
+      border: 2px solid rgba(231,76,60,0.3);
+      animation: ctaRingPulse 2.5s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes ctaRingPulse {
+      0%,100% { opacity: 0; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.02); }
     }
     .cta-sub {
-      font-size: 0.72rem;
-      font-weight: 400;
-      margin-top: 6px;
-      opacity: 0.85;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-top: 10px;
+      opacity: 1;
+      letter-spacing: 0.04em;
+      background: rgba(255,255,255,0.15);
+      padding: 5px 16px;
+      border-radius: 100px;
+      color: #fff;
     }
-    .cta-arrow {
-      display: inline-block;
-      margin-left: 8px;
-      transition: transform 0.3s ease;
+    .cta-sub .cta-sub-dot {
+      width: 6px; height: 6px;
+      background: #ffd700;
+      border-radius: 50%;
+      animation: pulse 1.5s ease-in-out infinite;
+      flex-shrink: 0;
     }
-    .cta-button:hover .cta-arrow { transform: translateX(6px); }
 
     /* ============================================
        HERO - FULL VIEWPORT CINEMATIC
@@ -260,35 +296,90 @@
       padding: 0 clamp(20px, 5vw, 60px);
     }
 
-    /* Animated mesh gradient background */
+    /* Hero Background Photo */
+    .hero-photo-bg {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .hero-photo-bg img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      display: block;
+      opacity: 0;
+      transform: scale(1.1);
+      transition: none;
+    }
+    .hero-photo-bg img.loaded {
+      opacity: 1;
+      transform: scale(1);
+    }
+    /* Dark overlay on the photo to ensure text readability */
+    .hero-photo-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background:
+        linear-gradient(180deg,
+          rgba(10,15,26,0.55) 0%,
+          rgba(10,15,26,0.35) 30%,
+          rgba(10,15,26,0.30) 50%,
+          rgba(10,15,26,0.50) 80%,
+          rgba(10,15,26,0.85) 100%
+        ),
+        linear-gradient(90deg,
+          rgba(10,15,26,0.5) 0%,
+          transparent 40%,
+          transparent 60%,
+          rgba(10,15,26,0.5) 100%
+        );
+      z-index: 0;
+    }
+    /* Accent color tint on the photo */
+    .hero-photo-tint {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background:
+        radial-gradient(ellipse at 25% 50%, rgba(78,205,196,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 75% 30%, rgba(231,76,60,0.05) 0%, transparent 50%);
+      z-index: 0;
+      mix-blend-mode: screen;
+    }
+
+    /* Animated mesh gradient (now layered ABOVE photo) */
     .hero-bg {
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
       z-index: 0;
+      pointer-events: none;
     }
     .hero-bg-gradient {
       position: absolute;
       width: 600px; height: 600px;
       border-radius: 50%;
       filter: blur(120px);
-      opacity: 0.4;
+      opacity: 0.25;
     }
     .hero-bg-gradient--1 {
       top: -20%; left: -10%;
-      background: radial-gradient(circle, rgba(78,205,196,0.3) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(78,205,196,0.25) 0%, transparent 70%);
       animation: floatGrad1 12s ease-in-out infinite;
     }
     .hero-bg-gradient--2 {
       bottom: -30%; right: -15%;
-      background: radial-gradient(circle, rgba(231,76,60,0.2) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(231,76,60,0.15) 0%, transparent 70%);
       animation: floatGrad2 10s ease-in-out infinite;
     }
     .hero-bg-gradient--3 {
       top: 50%; left: 50%;
       transform: translate(-50%,-50%);
       width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(78,205,196,0.08) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(78,205,196,0.06) 0%, transparent 70%);
       animation: floatGrad3 14s ease-in-out infinite;
     }
     @keyframes floatGrad1 {
@@ -410,13 +501,14 @@
     }
 
     .hero-sub {
-      font-size: clamp(0.85rem, 1.5vw, 1.05rem);
-      color: rgba(255,255,255,0.55);
-      margin: 28px auto 48px;
-      max-width: 560px;
-      line-height: 2;
-      font-weight: 300;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: rgba(255,255,255,0.88);
+      margin: 32px auto 52px;
+      max-width: 600px;
+      line-height: 2.1;
+      font-weight: 400;
       opacity: 0;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
     }
 
     .hero-cta-wrapper {
@@ -786,26 +878,66 @@
       max-width: 700px;
       margin: 0 auto;
     }
-    .story-profile {
+
+    /* Story intro - profile photo + info side by side */
+    .story-intro {
       display: flex;
       align-items: center;
-      gap: 18px;
-      margin-bottom: 32px;
-      padding-bottom: 28px;
-      border-bottom: 1px solid var(--color-border);
+      gap: clamp(20px, 4vw, 36px);
+      max-width: 700px;
+      margin: 0 auto 48px;
+      padding: clamp(24px, 4vw, 36px);
+      background: var(--color-bg);
+      border-radius: 24px;
+      border: 1px solid var(--color-border);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
     }
-    .story-avatar {
-      width: 60px; height: 60px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, var(--color-dark), var(--color-dark-2));
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .story-intro-photo {
+      width: clamp(100px, 20vw, 160px);
+      height: clamp(100px, 20vw, 160px);
+      border-radius: 20px;
+      overflow: hidden;
       flex-shrink: 0;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      border: 3px solid var(--color-border);
     }
-    .story-avatar svg { width: 30px; height: 30px; }
-    .story-name { font-weight: 700; font-size: 1.05rem; color: var(--color-text); }
-    .story-title { font-size: 0.78rem; color: var(--color-text-muted); margin-top: 3px; }
+    .story-intro-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .story-intro-name {
+      font-weight: 900;
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      color: var(--color-text);
+      margin-bottom: 4px;
+    }
+    .story-intro-title {
+      font-size: 0.82rem;
+      color: var(--color-text-muted);
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .story-intro-tagline {
+      font-size: 0.9rem;
+      color: var(--color-accent-2);
+      font-weight: 700;
+      line-height: 1.6;
+      padding-left: 12px;
+      border-left: 3px solid var(--color-accent);
+    }
+    @media (max-width: 479px) {
+      .story-intro {
+        flex-direction: column;
+        text-align: center;
+      }
+      .story-intro-tagline {
+        border-left: none;
+        padding-left: 0;
+        border-top: 3px solid var(--color-accent);
+        padding-top: 12px;
+      }
+    }
+
     .story-text { font-size: 0.92rem; line-height: 2.2; color: #444; }
     .story-text p { margin-bottom: 20px; }
     .story-text p:last-child { margin-bottom: 0; }
@@ -1466,6 +1598,21 @@
       background: rgba(78,205,196,0.1);
       border-color: rgba(78,205,196,0.35);
     }
+
+    /* Final CTA buttons - vertical stack */
+    .final-cta-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+    .final-cta-buttons .cta-button {
+      min-width: 320px;
+    }
+    .final-cta-buttons .survey-link {
+      margin-top: 20px;
+    }
+
     .guarantee {
       display: inline-flex;
       align-items: center;
@@ -1609,6 +1756,13 @@
     <!-- HERO - Full Viewport Cinematic -->
     <!-- ============================== -->
     <section class="hero" id="hero">
+      <!-- Background Photo Layer -->
+      <div class="hero-photo-bg">
+        <img src="assets/images/hero-bg-future.jpg" alt="" id="heroBgImg">
+      </div>
+      <div class="hero-photo-overlay"></div>
+      <div class="hero-photo-tint"></div>
+      <!-- Animated gradient orbs on top -->
       <div class="hero-bg">
         <div class="hero-bg-gradient hero-bg-gradient--1"></div>
         <div class="hero-bg-gradient hero-bg-gradient--2"></div>
@@ -1637,8 +1791,8 @@
         </p>
         <div class="hero-cta-wrapper" id="heroCta">
           <a href="https://timerex.net/i/abe0tatsu_4697/ff861b08/" target="_blank" rel="noopener" class="cta-button">
-            無料個別面談に申し込む<span class="cta-arrow">&rarr;</span>
-            <span class="cta-sub">毎月先着5名限定 ・ オンライン30分</span>
+            無料個別面談に申し込む
+            <span class="cta-sub"><span class="cta-sub-dot"></span>毎月先着5名限定 ・ オンライン30分</span>
           </a>
         </div>
         <div class="hero-stats" id="heroStats">
@@ -1741,8 +1895,8 @@
       <div class="container reveal-up">
         <p>その悩みを<span class="red">30分で整理</span>できます。</p>
         <a href="https://timerex.net/i/abe0tatsu_4697/ff861b08/" target="_blank" rel="noopener" class="cta-button">
-          まずは無料で相談する<span class="cta-arrow">&rarr;</span>
-          <span class="cta-sub">売り込み一切なし</span>
+          まずは無料で相談する
+          <span class="cta-sub"><span class="cta-sub-dot"></span>売り込み一切なし ・ 完全無料</span>
         </a>
       </div>
     </section>
@@ -1757,22 +1911,21 @@
           <span class="section-label">Story</span>
           <h2 class="section-heading">その悩み、僕も同じでした。</h2>
         </div>
+        <!-- Profile + Timeline combined layout -->
+        <div class="story-intro reveal-up">
+          <div class="story-intro-photo">
+            <img src="assets/images/daeg-profile.jpg" alt="ダエグ先生 - 教員10年からAI独立">
+          </div>
+          <div class="story-intro-info">
+            <div class="story-intro-name">ダエグ先生</div>
+            <div class="story-intro-title">教員10年 → AI独立した元公務員</div>
+            <div class="story-intro-tagline">「安定」を手放さず、<br>「選択肢」を増やした人。</div>
+          </div>
+        </div>
         <div class="story-illustration reveal-scale">
           <img src="assets/images/story-bg.png" alt="教員生活から独立までのタイムライン" width="800" height="400">
         </div>
         <div class="story-card reveal-up">
-          <div class="story-profile">
-            <div class="story-avatar">
-              <svg viewBox="0 0 28 28" fill="none">
-                <circle cx="14" cy="10" r="6" stroke="#4ecdc4" stroke-width="1.5"/>
-                <path d="M4 26c0-5.5 4.5-10 10-10s10 4.5 10 10" stroke="#4ecdc4" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div>
-              <div class="story-name">ダエグ先生</div>
-              <div class="story-title">教員10年 → AI独立した元公務員</div>
-            </div>
-          </div>
           <div class="story-text">
             <p>実は、僕もかつてはまったく同じ悩みを抱えていました。</p>
             <p>教員として10年間、毎日2時間かけて授業準備をし、生徒のために全力で働く日々。安定した収入はあったけれど、ふと気づいたんです。</p>
@@ -2020,8 +2173,8 @@
             <div class="consul-limited">毎月先着5名様限定 ・ 今月残り2枠</div>
             <div style="text-align:center;margin-top:32px;">
               <a href="https://timerex.net/i/abe0tatsu_4697/ff861b08/" target="_blank" rel="noopener" class="cta-button" style="font-size:0.95rem;padding:18px 36px;">
-                無料面談の日程を選ぶ<span class="cta-arrow">&rarr;</span>
-                <span class="cta-sub">30秒で予約完了</span>
+                無料面談の日程を選ぶ
+                <span class="cta-sub"><span class="cta-sub-dot"></span>先着5名限定 ・ 30秒で予約完了</span>
               </a>
             </div>
           </div>
@@ -2143,13 +2296,15 @@
           </div>
         </div>
 
-        <a href="https://timerex.net/i/abe0tatsu_4697/ff861b08/" target="_blank" rel="noopener" class="cta-button" id="ctaButton">
-          まずは日程を選ぶ<span class="cta-arrow">&rarr;</span>
-          <span class="cta-sub">毎月先着5名限定 ・ 30秒で予約完了</span>
-        </a>
-        <a href="https://forms.gle/FStkxFKVne8sdXU27" target="_blank" rel="noopener" class="survey-link">
-          日程予約済みの方はこちら：事前アンケートに回答する &rarr;
-        </a>
+        <div class="final-cta-buttons">
+          <a href="https://timerex.net/i/abe0tatsu_4697/ff861b08/" target="_blank" rel="noopener" class="cta-button" id="ctaButton">
+            まずは日程を選ぶ
+            <span class="cta-sub"><span class="cta-sub-dot"></span>毎月先着5名限定 ・ 30秒で予約完了</span>
+          </a>
+          <a href="https://forms.gle/FStkxFKVne8sdXU27" target="_blank" rel="noopener" class="survey-link">
+            日程予約済みの方はこちら：事前アンケートに回答する &rarr;
+          </a>
+        </div>
         <div class="guarantee">
           <img src="assets/icons/lock.svg" alt="">
           <span>完全秘密厳守 ・ 売り込みゼロ保証</span>
@@ -2170,8 +2325,8 @@
   <div class="floating-cta" id="floatingCta">
     <div class="floating-cta-inner">
       <a href="https://timerex.net/i/abe0tatsu_4697/ff861b08/" target="_blank" rel="noopener" class="cta-button">
-        無料で相談する<span class="cta-arrow">&rarr;</span>
-        <span class="cta-sub">残り2枠 ・ 30秒で完了</span>
+        無料で相談する
+        <span class="cta-sub"><span class="cta-sub-dot"></span>残り2枠 ・ 30秒で完了</span>
       </a>
     </div>
   </div>
@@ -2324,6 +2479,38 @@
         ease: 'none'
       });
     });
+
+
+    // ===== HERO BACKGROUND IMAGE - Cinematic Reveal =====
+    const heroBgImg = document.getElementById('heroBgImg');
+    if (heroBgImg) {
+      const revealHeroBg = () => {
+        gsap.to(heroBgImg, {
+          opacity: 1,
+          scale: 1,
+          duration: 2.5,
+          ease: 'power2.out',
+          onStart: () => { heroBgImg.classList.add('loaded'); }
+        });
+      };
+      if (heroBgImg.complete) {
+        revealHeroBg();
+      } else {
+        heroBgImg.addEventListener('load', revealHeroBg);
+      }
+      // Slow Ken Burns parallax zoom on scroll
+      gsap.to(heroBgImg, {
+        scrollTrigger: {
+          trigger: '.hero',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 1.5
+        },
+        scale: 1.15,
+        y: 60,
+        ease: 'none'
+      });
+    }
 
 
     // ===== HERO PARALLAX on scroll =====
